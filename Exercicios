@@ -1,0 +1,89 @@
+Número 1:
+
+function contarOcorrencias(numeros) {
+    let frequencia = {};
+    numeros.forEach(num => {
+        frequencia[num] = (frequencia[num] || 0) + 1;
+    });
+    return frequencia;
+}
+
+---------------------------------------------------
+Número 2:
+
+function ordenarPorIdade(pessoas) {
+    return pessoas.sort((a, b) => a.idade - b.idade);
+}
+
+---------------------------------------------------
+Número 3:
+
+function separarParesImpares(numeros) {
+    let resultado = { pares: [], impares: [] };
+    for (let i = 0; i < numeros.length; i++) {
+        if (numeros[i] % 2 === 0) {
+            resultado.pares.push(numeros[i]);
+        } else {
+            resultado.impares.push(numeros[i]);
+        }
+    }
+    return resultado;
+}
+
+------------------------------------------------------
+Número 4:
+
+function ehPalindromo(str) {
+    let normal = str.split('').join('');
+    let invertido = str.split('').reverse().join('');
+    return normal === invertido;
+}
+--------------------------------------------------------
+Número 5:
+
+function somaMatriz(matriz) {
+    let soma = 0;
+    for (let i = 0; i < matriz.length; i++) {
+        for (let j = 0; j < matriz[i].length; j++) {
+            soma += matriz[i][j];
+        }
+    }
+    return soma;
+}
+
+----------------------------------------------------------
+Número 6:
+function substituirElemento(array, valorAntigo, novoValor) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === valorAntigo) {
+            array[i] = novoValor;
+        }
+    }
+    return array;
+}
+-----------------------------------------------------------
+Número 7: 
+
+function multiplicarMatrizes(matrizA, matrizB) {
+    let linhasA = matrizA.length;
+    let colunasA = matrizA[0].length;
+    let linhasB = matrizB.length;
+    let colunasB = matrizB[0].length;
+
+    if (colunasA !== linhasB) {
+        return null;
+    }
+
+    let resultado = [];
+    for (let i = 0; i < linhasA; i++) {
+        resultado[i] = [];
+        for (let j = 0; j < colunasB; j++) {
+            resultado[i][j] = 0;
+            for (let k = 0; k < colunasA; k++) {
+                resultado[i][j] += matrizA[i][k] * matrizB[k][j];
+            }
+        }
+    }
+
+    return resultado;
+}
